@@ -15,7 +15,8 @@ Sistema desktop desenvolvido em C# .NET com Windows Forms.
 - Windows Forms
 
 ## Preview
-<img width="1000" height="486" alt="image" src="https://github.com/user-attachments/assets/dee33156-e3f7-449c-babf-e4dcf509c533" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58ff8489-f731-48f0-a4f1-95114dd01820" />
+
 
 ## Aprendizados
 - Manipulação de DataGridView
