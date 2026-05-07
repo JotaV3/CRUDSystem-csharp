@@ -41,6 +41,7 @@ namespace CRUDSystem
                 btnUpdate.FlatStyle = FlatStyle.Flat;
                 btnUpdate.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
 
+                // edit button style
                 btnUpdate.CellTemplate.Style.BackColor = Color.FromArgb(0, 191, 255);
                 btnUpdate.CellTemplate.Style.SelectionBackColor = Color.FromArgb(0, 191, 255);
                 btnUpdate.CellTemplate.Style.ForeColor = Color.White;
@@ -58,6 +59,7 @@ namespace CRUDSystem
                 btnDelete.FlatStyle = FlatStyle.Flat;
                 btnDelete.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
 
+                // delete button style
                 btnDelete.CellTemplate.Style.BackColor = Color.FromArgb(220, 53, 69);
                 btnDelete.CellTemplate.Style.SelectionBackColor = Color.FromArgb(220, 53, 69);
                 btnDelete.CellTemplate.Style.ForeColor = Color.White;
@@ -125,7 +127,8 @@ namespace CRUDSystem
 
             dataGridViewUsers.Columns["Name"].HeaderText = "Nome";
             dataGridViewUsers.Columns["Email"].HeaderText = "E-mail";
-            dataGridViewUsers.Columns["Telephone"].HeaderText = "Telefone";    
+            dataGridViewUsers.Columns["Telephone"].HeaderText = "Telefone";
+            dataGridViewUsers.Columns["CreateAt"].HeaderText = "Data de registro";
         }
 
         private void btnNovoUsuario_Click(object sender, EventArgs e)

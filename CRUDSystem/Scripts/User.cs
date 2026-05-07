@@ -1,4 +1,6 @@
-﻿namespace CRUDSystem.Scripts
+﻿using System;
+
+namespace CRUDSystem.Scripts
 {
     public class User
     {
@@ -6,6 +8,7 @@
         public string Email { get; private set; }
         public string Telephone { get; private set; }
         public string CPF { get; private set; }
+        public DateTime CreateAt { get; private set; }
 
         public User(string name, string email, string telephone, string cpf)
         {
@@ -13,6 +16,7 @@
             Email = email;
             Telephone = telephone;  
             CPF = cpf;
-        }
+            CreateAt = DateTime.Now.Date;
+        }   
     }
 }
