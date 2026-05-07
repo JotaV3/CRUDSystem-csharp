@@ -21,7 +21,7 @@ namespace CRUDSystem
             string email = txtBoxEmail.Text;
             string telephone = mskTxtBoxTelephone.Text;
 
-            string cpf = Regex.Replace(mskTxtBoxCPF.Text, @"\D", "");
+            string cpf = mskTxtBoxCPF.Text;
                 
             NewUser = new User(name, email, telephone, cpf);
 

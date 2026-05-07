@@ -39,16 +39,12 @@ namespace CRUDSystem
                 btnUpdate.Text = EDIT_BUTTON_COLUMN_NAME;
                 btnUpdate.UseColumnTextForButtonValue = true;
                 btnUpdate.FlatStyle = FlatStyle.Flat;
-                // blue color for edit button
-                btnUpdate.DefaultCellStyle.BackColor = Color.FromArgb(0, 191, 255);
-                btnUpdate.DefaultCellStyle.ForeColor = Color.White;
-                btnUpdate.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 191, 255);
-                btnUpdate.DefaultCellStyle.SelectionForeColor = Color.White;
-                btnUpdate.DefaultCellStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
-                // remove border from edit button
+                btnUpdate.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+                btnUpdate.CellTemplate.Style.BackColor = Color.FromArgb(0, 191, 255);
                 btnUpdate.CellTemplate.Style.SelectionBackColor = Color.FromArgb(0, 191, 255);
-                // button padding
-                btnUpdate.DefaultCellStyle.Padding = new Padding(5);
+                btnUpdate.CellTemplate.Style.ForeColor = Color.White;
+                btnUpdate.CellTemplate.Style.SelectionForeColor = Color.White;
 
                 dataGridViewUsers.Columns.Add(btnUpdate);
             }
@@ -60,16 +56,12 @@ namespace CRUDSystem
                 btnDelete.Text = DELETE_BUTTON_COLUMN_NAME;
                 btnDelete.UseColumnTextForButtonValue = true;
                 btnDelete.FlatStyle = FlatStyle.Flat;
-                // red color for delete button
-                btnDelete.DefaultCellStyle.BackColor = Color.FromArgb(220, 53, 69);
-                btnDelete.DefaultCellStyle.ForeColor = Color.White;
-                btnDelete.DefaultCellStyle.SelectionBackColor = Color.FromArgb(220, 53, 69);
-                btnDelete.DefaultCellStyle.SelectionForeColor = Color.White;
-                btnDelete.DefaultCellStyle.Font = new Font("Segoe UI", 8, FontStyle.Regular);
-                // remove border from delete button
+                btnDelete.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+                btnDelete.CellTemplate.Style.BackColor = Color.FromArgb(220, 53, 69);
                 btnDelete.CellTemplate.Style.SelectionBackColor = Color.FromArgb(220, 53, 69);
-                // button padding
-                btnDelete.DefaultCellStyle.Padding = new Padding(5);
+                btnDelete.CellTemplate.Style.ForeColor = Color.White;
+                btnDelete.CellTemplate.Style.SelectionForeColor = Color.White;
 
                 dataGridViewUsers.Columns.Add(btnDelete);
             }
@@ -130,6 +122,10 @@ namespace CRUDSystem
         private void UsersManagement_Load(object sender, EventArgs e)
         {
             CreateActionButtonsColumns();
+
+            dataGridViewUsers.Columns["Name"].HeaderText = "Nome";
+            dataGridViewUsers.Columns["Email"].HeaderText = "E-mail";
+            dataGridViewUsers.Columns["Telephone"].HeaderText = "Telefone";    
         }
 
         private void btnNovoUsuario_Click(object sender, EventArgs e)
@@ -151,7 +147,7 @@ namespace CRUDSystem
                 if (MessageBox.Show("Tem certeza que deseja excluir este usuário?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     userList.RemoveAt(e.RowIndex);
-                    CreateActionButtonsColumns();
+                    ApplySearchFilter();
                 }
             }
         }
